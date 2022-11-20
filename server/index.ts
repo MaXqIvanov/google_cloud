@@ -15,6 +15,6 @@ app.get('/*', (req: Request, res: Response) => {
     res.sendFile(`../client/build/index.html`);
 });
 
-app.listen(8000, () => {
-    console.log('Application listening on port 8000!');
+app.listen(5004, () => {
+    console.log('Application listening on port 5004!');
 });
