@@ -55,7 +55,7 @@ export const HomePage = () => {
         {image_preview && <><div onClick={returnHome} className={styles.return_btn}></div>
         </>}
         <img className={image_preview ? styles.image : styles.not_image} src={image_preview}></img>
-        <div onClick={()=> setIsVisibleTextArea(true)}>{value_text_area}</div>
+        <div style={{opacity: '0'}} onClick={()=> setIsVisibleTextArea(true)}>{value_text_area}</div>
       </div>
       {!image_preview &&
       <div className={styles.load_photo_btn}>
