@@ -8,7 +8,7 @@ class GoogleCloudController {
                 return res.status(400).json({message: 'Скриншот не был передан'})
             }
             const {iamToken}: any = await axios.post(`https://iam.api.cloud.yandex.net/iam/v1/tokens?yandexPassportOauthToken=${process.env.AUTH_TOKEN}`)
-            
+            console.log(iamToken);
             const response = await axios.post('https://vision.api.cloud.yandex.net/vision/v1/batchAnalyze', {
                 "folderId": process.env.VISOR_FOLDER,
                 "analyze_specs": [{
@@ -45,6 +45,8 @@ class GoogleCloudController {
               let text = array_words
             return res.json(text)
         } catch (error) {
+            console.log(error);
+            
            return res.status(400).json({message: error})
         }
 
